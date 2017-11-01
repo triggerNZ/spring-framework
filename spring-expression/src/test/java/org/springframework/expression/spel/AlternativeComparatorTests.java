@@ -17,7 +17,6 @@
 package org.springframework.expression.spel;
 
 import org.junit.Test;
-import org.springframework.lang.Nullable;
 import org.springframework.expression.Expression;
 import org.springframework.expression.TypeComparator;
 import org.springframework.expression.EvaluationException;
@@ -38,12 +37,12 @@ public class AlternativeComparatorTests {
 	// A silly comparator declaring everything to be equal
 	private TypeComparator customComparator = new TypeComparator() {
 		@Override
-		public boolean canCompare(@Nullable Object firstObject, @Nullable Object secondObject) {
+		public boolean canCompare(Object firstObject, Object secondObject) {
 			return true;
 		}
 
 		@Override
-		public int compare(@Nullable Object firstObject, @Nullable Object secondObject) throws EvaluationException {
+		public int compare(Object firstObject, Object secondObject) throws EvaluationException {
 			return 0;
 		}
 
